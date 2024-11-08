@@ -24,4 +24,5 @@ async function getAllTransactions() {
   return { data, error }
 }
 
-module.exports = { addTransaction, getAllTransactions }
+
+module.exports = { addTransaction, getAllTransactions, supabase }

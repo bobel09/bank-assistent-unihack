@@ -1,6 +1,8 @@
 # Node modules
 node_modules/
 
+unihack24.json
+
 # Environment variables
 .env
 .env.local
