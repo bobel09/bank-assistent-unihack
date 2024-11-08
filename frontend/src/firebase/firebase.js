@@ -1,22 +1,27 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {getAuth} from "firebase/auth";
 import {signInWithPopup} from "firebase/auth";
 import {getFirestore } from "firebase/firestore";
+import { setPersistence, browserLocalPersistence } from "firebase/auth";
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA-uyFhCC4TOEst_uB9et3Oi6sB3Fv4xJE",
-    authDomain: "bank-assistent-1dea1.firebaseapp.com",
-    projectId: "bank-assistent-1dea1",
-    storageBucket: "bank-assistent-1dea1.firebasestorage.app",
-    messagingSenderId: "232402832863",
-    appId: "1:232402832863:web:bc98310aa847029ddc886a",
-    measurementId: "G-E902J7HY4E"
-  };
+  apiKey: "AIzaSyCajPbY8B-kt7RWurcuhrkZEU5kOtnptKI",
+  authDomain: "movie-site-c5ae8.firebaseapp.com",
+  projectId: "movie-site-c5ae8",
+  storageBucket: "movie-site-c5ae8.firebasestorage.app",
+  messagingSenderId: "13402152154",
+  appId: "1:13402152154:web:e29c37025a37e6883a19e3",
+  measurementId: "G-XFZC3VQQXR"
+};
+
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+setPersistence(auth, browserLocalPersistence).catch((error) => {
+  console.error("Error setting persistence:", error);
+});
 
 export {app,auth, signInWithPopup, db};
