@@ -2,6 +2,7 @@
 const express = require('express')
 const transactionRoutes = require('./routes/transactionRoutes.js')
 const ocrRoutes = require('./routes/ocrRoutes.js')
+const spendingRoutes = require('./routes/spendingRoutes.js')
 const { simulateTransaction } = require('./controllers/transactionController.js')
 require('dotenv').config()
 
@@ -13,11 +14,12 @@ const PORT = 3000
 app.use(express.json())
 app.use('/api/transactions', transactionRoutes)
 app.use('/api', ocrRoutes);
+app.use('/api/spending', spendingRoutes)
 
 // Schedule a transaction every minute
-setInterval(() => {
-  simulateTransaction(null, { json: () => {} }) // Trigger without request/response
-}, 5000)
+// setInterval(() => {
+//   simulateTransaction(null, { json: () => {} }) // Trigger without request/response
+// }, 60000)
 
 // Start the server
 app.listen(PORT, () => {
