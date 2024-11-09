@@ -14,7 +14,7 @@ function LandingPage() {
         <p className="landing-subtitle">Enjoy your first banking assistent</p>
         <div className="landing-buttons">
           <Link to="/login" className="landing-btn landing-login-btn">Log In</Link>
-          <Link to="/signup" className="landing-btn landing-signup-btn">Sign Up</Link>
+          <Link to="/register" className="landing-btn landing-signup-btn">Sign Up</Link>
         </div>
       </div>
       <div className="landing-background">

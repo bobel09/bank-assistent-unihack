@@ -17,7 +17,8 @@ async function simulateTransaction(req, res) {
 
 // Fetch all transactions
 async function getTransactions(req, res) {
-  const { data, error } = await fetchAllTransactions()
+  const uid = req.user.uid
+  const { data, error } = await fetchAllTransactions(uid)
   if (error) {
     res.status(500).json({ error: "Error fetching transactions" })
   } else {

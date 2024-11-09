@@ -17,7 +17,7 @@ app.use('/api', ocrRoutes);
 // Schedule a transaction every minute
 setInterval(() => {
   simulateTransaction(null, { json: () => {} }) // Trigger without request/response
-}, 60000)
+}, 5000)
 
 // Start the server
 app.listen(PORT, () => {

@@ -16,8 +16,8 @@ async function addTransaction(transaction) {
   return { data, error }
 }
 
-async function getAllTransactions() {
-  const { data, error } = await supabase.from('transactions').select('*')
+async function getAllTransactions(uid) {
+  const { data, error } = await supabase.from('transactions').select('*').eq('uid',uid)
   if (error) {
     console.error("Error fetching transactions:", error)
   }

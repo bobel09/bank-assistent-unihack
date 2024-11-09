@@ -7,8 +7,8 @@ async function saveTransaction(transaction) {
 }
 
 // Fetch all transactions
-async function fetchAllTransactions() {
-  return await getAllTransactions()
+async function fetchAllTransactions(uid) {
+  return await getAllTransactions(uid)
 }
 
 module.exports = { saveTransaction, fetchAllTransactions }
